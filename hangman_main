@@ -121,12 +121,11 @@ while again == 'y':
             
         user.append(input_char)
         
-        if not input_char in word_chosen:
+        if not input_char in word_chosen: # wrong char has been inputted
             lives += 1
-            print(f"There is no '{input_char}' in the chosen word. You have {6 - lives} live(s) left")
+            print(f"\nThere is no '{input_char}' in the chosen word. You have {6 - lives} live(s) left")
             
-        else:
-            output = '' #reset the output
+        else: # user have inputted the correct character
             for position in range(len(word_chosen)):
                 if word_chosen[position] in user:
                     output[position] = word_chosen[position]
